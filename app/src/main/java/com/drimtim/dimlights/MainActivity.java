@@ -36,10 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                 break;
             case R.id.exitBtn:
-                //// TODO: 08.11.2016 alert dialog exit
                 final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setMessage(R.string.exit_dialog_title);
-                builder.setTitle(R.string.exit_dialog_title);
+                builder.setTitle(R.string.exit);
                 builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -53,11 +52,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 });
                 builder.setCancelable(true);
-                builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                    public void onCancel(DialogInterface dialog) {
-                        //// TODO: 08.11.2016 close dialog
-                    }
-                });
                 AlertDialog exitDialog = builder.create();
                 exitDialog.show();
                 break;
