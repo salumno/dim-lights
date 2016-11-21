@@ -1,4 +1,4 @@
-package com.example.salumno.dimlights;
+package com.drimtim.dimlights.dimlights;
 
 import org.junit.Test;
 

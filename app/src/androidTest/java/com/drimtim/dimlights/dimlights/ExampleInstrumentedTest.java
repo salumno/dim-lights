@@ -1,4 +1,4 @@
-package com.example.salumno.dimlights;
+package com.drimtim.dimlights.dimlights;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
