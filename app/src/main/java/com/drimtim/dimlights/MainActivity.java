@@ -14,9 +14,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        startService(new Intent(this, SoundService.class));
     }
 
     public void exitOnClick(View view) {
+        stopService(new Intent(this, SoundService.class));
         FragmentManager fragmentManager = getSupportFragmentManager();
         ConfirmDialog dialog = new ConfirmDialog();
         dialog.setTitle("Exit");
