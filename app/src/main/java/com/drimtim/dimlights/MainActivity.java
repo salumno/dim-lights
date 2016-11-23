@@ -14,11 +14,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        startService(new Intent(this, SoundService.class));
+        //startService(new Intent(this, SoundService.class));
     }
 
     public void exitOnClick(View view) {
-        stopService(new Intent(this, SoundService.class));
+        //stopService(new Intent(this, SoundService.class)); //TODO
         FragmentManager fragmentManager = getSupportFragmentManager();
         ConfirmDialog dialog = new ConfirmDialog();
         dialog.setTitle("Exit");
@@ -29,4 +29,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, GameActivity.class);
         startActivity(intent);
     }
+
+    public void optionsOnClick(View view) {
+        Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+        startActivity(intent);
+    }
+
+
 }

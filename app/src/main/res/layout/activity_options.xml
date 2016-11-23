@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:id="@+id/activity_menu"
-    tools:context="com.drimtim.dimlights.GameActivity">
+    tools:context="com.drimtim.dimlights.OptionsActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -22,6 +21,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_game" />
+    <include layout="@layout/content_options" />
 
 </android.support.design.widget.CoordinatorLayout>
