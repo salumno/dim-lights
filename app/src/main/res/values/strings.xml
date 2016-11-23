@@ -9,6 +9,6 @@
     <string name="confirm">Are you sure?</string>
     <string name="game_field_toolbar">DIMMY LIGHTS</string>
     <string name="on_game_field_text">Free advertising space</string>
-    <string name="title_activity_options">OptionsActivity</string>
-    <string name="title_activity_game">GameActivity</string>
+    <string name="title_activity_options">Options</string>
+    <string name="title_activity_game">Let\'s roll!</string>
 </resources>

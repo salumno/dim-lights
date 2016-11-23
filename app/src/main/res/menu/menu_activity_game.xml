@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/back"
+        android:icon="@drawable/back_arrow"
+        android:title="Back"
+        yourapp:showAsAction="always" />
+
+    <item
+        android:id="@+id/sound"
+        android:icon="@drawable/sound"
+        android:title="sound"
+        yourapp:showAsAction="always" />
+
+    <item
+        android:id="@+id/noSound"
+        android:icon="@drawable/no_sound"
+        android:title="no_sound"
+        yourapp:showAsAction="always" />
+
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/settings"
+        android:title="Settings"
+        yourapp:showAsAction="always" />
+
+</menu>
