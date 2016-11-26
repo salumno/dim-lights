@@ -16,7 +16,6 @@ import com.drimtim.dimlights.dimlights.R;
 
 public class OptionsActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +50,7 @@ public class OptionsActivity extends AppCompatActivity {
         });
     }
 
+
     public void putBooleanInPreferences(boolean isChecked, String key){
         SharedPreferences sharedPreferences = this.getPreferences(Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -62,6 +62,16 @@ public class OptionsActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getPreferences(Activity.MODE_PRIVATE);
         Boolean isChecked = sharedPreferences.getBoolean(key, false);
         return isChecked;
+    }
+
+    public void aboutOnClick(View view) {
+        Intent intent = new Intent(OptionsActivity.this, AboutActivity.class);
+        startActivity(intent);
+    }
+
+    public void rulesOnClick(View view) {
+        Intent intent = new Intent(OptionsActivity.this, RulesActivity.class);
+        startActivity(intent);
     }
 
 }

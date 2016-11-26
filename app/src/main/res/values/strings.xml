@@ -11,4 +11,21 @@
     <string name="title_activity_options">OPTIONS</string>
     <string name="title_activity_game">DIM LIGHTS</string>
     <string name="sound_settings">Turn on/off sound</string>
+    <string name="main_title">DIM LIGHTS</string>
+    <string name="system_settings">App Settings</string>
+    <string name="options_about">INFORMATION</string>
+    <string name="options_rules">Rules</string>
+    <string name="button_about">About</string>
+    <string name="about_text">
+        DRIMTIM crew kindly present to your attention Android version of the old puzzle game «Lights Out».\n
+        \nThanks a lot <b>Avi Olti</b>, <b>Gyora Benedek</b>, <b>Zvi Herman</b>, <b>Revital Bloomberg</b>, <b>Avi Weiner</b> and <b>Michael Ganor</b> for idea and our <b>moms</b> for love.
+        We remember and respect your work!
+    </string>
+    <string name="rules_text">
+        Today, your task is as follows - turn off the lights in the apartments of five-story building.\n
+        \nIt is not a simple task: when you touch the switch in one of the apartments, the neighbors hear it and also change the position of the switch to confuse you (If it is on, it turns off, and vise versa).\n
+        \nOutwit these good and smart people and show what can happen when the light dims.
+    </string>
+    <string name="about_activity_title">About</string>
+    <string name="rules_activity_title">Rules</string>
 </resources>

@@ -1,7 +1,8 @@
 package com.drimtim.dimlights;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,15 +15,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        //startService(new Intent(this, SoundService.class));
     }
 
     public void exitOnClick(View view) {
-        //stopService(new Intent(this, SoundService.class)); //TODO
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        ConfirmDialog dialog = new ConfirmDialog();
-        dialog.setTitle("Exit");
-        dialog.show(fragmentManager, "dialog");
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Exit");
+        builder.setMessage(R.string.confirm);
+        builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                stopService(new Intent(MainActivity.this, SoundService.class));
+                MainActivity.this.finish();
+            }
+        });
+        builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.show();
     }
 
     public void gameOnClick(View view) {
@@ -34,6 +46,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
         startActivity(intent);
     }
-
 
 }

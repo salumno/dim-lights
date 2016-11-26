@@ -8,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.drimtim.dimlights.dimlights.R;
 
@@ -16,8 +15,6 @@ import com.drimtim.dimlights.dimlights.R;
 public class GameActivity extends AppCompatActivity {
 
     MenuItem settings;
-    MenuItem sound;
-    MenuItem noSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +38,6 @@ public class GameActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_activity_game, menu);
         settings = menu.findItem(R.id.settings);
-        sound = menu.findItem(R.id.sound);
-        noSound = menu.findItem(R.id.noSound);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -51,12 +46,6 @@ public class GameActivity extends AppCompatActivity {
         if (item.equals(settings)) {
             Intent intent = new Intent(this, OptionsActivity.class);
             startActivity(intent);
-        } else if (item.equals(sound)) {
-            Toast.makeText(getApplicationContext(), "Sound turned on", Toast.LENGTH_SHORT).show();
-            startService(new Intent(this, SoundService.class));
-        } else if (item.equals(noSound)) {
-            Toast.makeText(getApplicationContext(), "Sound turned off", Toast.LENGTH_SHORT).show();
-            stopService(new Intent(this, SoundService.class));
         }
         return super.onOptionsItemSelected(item);
     }

@@ -46,20 +46,55 @@
 
             <CheckBox
                 android:id="@+id/checkBoxSound"
+                android:state_checked="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="120dp"
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/system_settings"
+        android:id="@+id/system_setings_title"
+        android:layout_marginTop="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <TextView
+        android:text="@string/options_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:id="@+id/textView8"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <Button
+        android:text="@string/button_about"
+        android:onClick="aboutOnClick"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonRules"
+        android:layout_marginTop="20dp"
+        android:id="@+id/buttonAbout"
+        style="@android:style/Widget.Button"
+        android:visibility="visible" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/on_game_field_text" />
-    </LinearLayout>
+    <Button
+        android:text="@string/options_rules"
+        android:onClick="rulesOnClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:id="@+id/buttonRules"
+        style="@android:style/Widget.Button"
+        android:visibility="visible"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
