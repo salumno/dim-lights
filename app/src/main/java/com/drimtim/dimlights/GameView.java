@@ -36,7 +36,7 @@ class GameView extends View {
         active.setAntiAlias(true);
         active.setDither(true);
         active.setColor(Color.RED);
-        active.setStrokeWidth(10);
+        active.setStrokeWidth(8);
         active.setStyle(Paint.Style.FILL);
         inactive = new Paint();
         inactive.setAntiAlias(true);
@@ -83,8 +83,9 @@ class GameView extends View {
     private class MyGestureListener extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e) {
+            if (e.getY() < margin || e.getY() > margin + 5*squareLength) return true;
             int x = (int) e.getX() / squareLength;
-            int y = ((int) e.getY() - margin) / squareLength;
+            int y = (int) (e.getY() - margin) / squareLength;
             if (x >= 0 && x < 5 && y >= 0 && y < 5) field.click(x,y);
             invalidate();
             return true;
