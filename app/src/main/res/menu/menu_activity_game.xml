@@ -7,12 +7,17 @@
         android:icon="@drawable/sound"
         android:title="sound"
         yourapp:showAsAction="always" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
     <item
         android:id="@+id/noSound"
         android:icon="@drawable/no_sound"
         android:title="no_sound"
         yourapp:showAsAction="always" />-->
+
+    <item
+        android:id="@+id/score"
+        android:title="@string/score"
+        yourapp:showAsAction="always" />
 
     <item
         android:id="@+id/settings"

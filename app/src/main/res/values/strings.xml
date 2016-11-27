@@ -28,4 +28,5 @@
     </string>
     <string name="about_activity_title">About</string>
     <string name="rules_activity_title">Rules</string>
+    <string name="score">Score 0</string>
 </resources>

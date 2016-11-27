@@ -7,14 +7,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.drimtim.dimlights.dimlights.R;
 
 
-public class GameActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity implements View.OnTouchListener {
 
     MenuItem settings;
+    //private int stepCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,5 +50,10 @@ public class GameActivity extends AppCompatActivity {
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override //TODO Подсчет количества ходов пользователя
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        return false;
     }
 }
