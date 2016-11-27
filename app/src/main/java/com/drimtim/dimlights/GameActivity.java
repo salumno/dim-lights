@@ -1,10 +1,13 @@
 package com.drimtim.dimlights;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -34,6 +37,25 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
                 dialog.show(fragmentManager, "dialog");
             }
         });
+        GameView gameView = (GameView) findViewById(R.id.game_view);
+        Field field = new Field(this);
+        gameView.setField(field);
+
+    }
+
+    public void endGame() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("")
+                .setMessage(R.string.win)
+                .setCancelable(false)
+                .setNegativeButton(R.string.yes,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+//                                GameActivity.this.finish();
+                                GameActivity.super.finish();
+                            }
+                        });
+        builder.create().show();
     }
 
     @Override

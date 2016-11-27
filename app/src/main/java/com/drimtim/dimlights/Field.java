@@ -1,5 +1,7 @@
 package com.drimtim.dimlights;
 
+import android.util.Log;
+
 import java.util.Random;
 
 /**
@@ -8,10 +10,12 @@ import java.util.Random;
 
 class Field {
     private final boolean[][] field;
+    private GameActivity activity;
     private final int SIZE = 5;
 
-    public Field() {
+    public Field(GameActivity activity) {
         this.field = new boolean[SIZE][SIZE];
+        this.activity = activity;
         Random rand = new Random();
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -29,6 +33,10 @@ class Field {
         return checkWin();
     }
 
+    public void endGame() {
+        Log.d("end game", "end game");
+        activity.endGame();
+    }
     private boolean checkWin() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
