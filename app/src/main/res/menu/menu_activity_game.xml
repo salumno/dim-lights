@@ -14,15 +14,19 @@
         android:title="no_sound"
         yourapp:showAsAction="always" />-->
 
-    <item
-        android:id="@+id/score"
-        android:title="@string/score"
-        yourapp:showAsAction="always" />
+    <!--<item-->
+        <!--android:id="@+id/score"-->
+        <!--android:title="@string/score"-->
+        <!--yourapp:showAsAction="always" />-->
 
+    <!--<item-->
+        <!--android:id="@+id/score_count"-->
+        <!--android:title=""-->
+        <!--yourapp:showAsAction="always" />-->
     <item
         android:id="@+id/settings"
         android:icon="@drawable/settings"
-        android:title="Settings"
+        android:title="@string/button_settings"
         yourapp:showAsAction="always" />
 
 </menu>

@@ -10,16 +10,22 @@ import com.drimtim.dimlights.dimlights.R;
 
 public class ConfirmDialog extends DialogFragment {
 
-    String title;
+    private String title;
+    private String message;
 
     public void setTitle(String title) {
         this.title = title;
     }
 
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(title);
-        builder.setMessage(R.string.confirm);
+        if (this.message == null) builder.setMessage(R.string.confirm);
+        else builder.setMessage(this.message);
         builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

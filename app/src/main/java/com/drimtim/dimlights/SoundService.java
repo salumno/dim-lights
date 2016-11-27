@@ -10,7 +10,7 @@ import com.drimtim.dimlights.dimlights.R;
 public class SoundService extends Service {
 
     private static final String TAG = "SoundService";
-    MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayer;
 
     @Override
     public IBinder onBind(Intent intent) {

@@ -15,7 +15,7 @@ import com.drimtim.dimlights.dimlights.R;
 
 public class GameActivity extends AppCompatActivity implements View.OnTouchListener {
 
-    MenuItem settings;
+    private MenuItem settings;
     //private int stepCount = 0;
 
     @Override
@@ -41,6 +41,15 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
         getMenuInflater().inflate(R.menu.menu_activity_game, menu);
         settings = menu.findItem(R.id.settings);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        ConfirmDialog dialog = new ConfirmDialog();
+        dialog.setTitle("Exit");
+        dialog.show(fragmentManager, "dialog");
+//        super.onBackPressed();
     }
 
     @Override

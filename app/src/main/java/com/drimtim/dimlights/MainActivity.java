@@ -3,8 +3,9 @@ package com.drimtim.dimlights;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.drimtim.dimlights.dimlights.R;
@@ -14,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+//            this.getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorAccent));
+            this.getWindow().setStatusBarColor(Color.GRAY);
+        }
         setContentView(R.layout.activity_menu);
     }
 

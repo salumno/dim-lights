@@ -7,30 +7,30 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 /**
  * Created by avispa on 27/11/2016.
  */
 
 class GameView extends View {
+    private final GestureDetector detector;
+    private final int countOfCells = 5;
+    private final Paint active, inactive;
+    private final Context context;
+    private final Field field;
     private Bitmap mBitmap;
     private Canvas mCanvas;
-    private Paint active, inactive;
-    private Context context;
-    private final GestureDetector detector;
-    private Field field;
-    private final int countOfCells = 5;
     private int squareLength;
     private int margin;
+    private boolean isWin;
 
     public GameView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
+        this.isWin = false;
         this.field = new Field();
         active = new Paint();
         active.setAntiAlias(true);
@@ -62,7 +62,7 @@ class GameView extends View {
         int left = 0, top = margin, bottom = top + squareLength, right = squareLength;
         for (int i = 0; i < 5; ++i) {
             for (int j = 0; j < 5; ++j) {
-                if (field.checkCell(j,i)) canvas.drawRect(left, top, right, bottom, active);
+                if (field.checkCell(j, i)) canvas.drawRect(left, top, right, bottom, active);
                 else canvas.drawRect(left, top, right, bottom, inactive);
                 left += squareLength;
                 right += squareLength;
@@ -80,13 +80,18 @@ class GameView extends View {
         return true;
     }
 
+    public boolean isWin() {
+        return this.isWin;
+    }
+
     private class MyGestureListener extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e) {
-            if (e.getY() < margin || e.getY() > margin + 5*squareLength) return true;
+            if (e.getY() < margin || e.getY() > margin + 5 * squareLength) return true;
             int x = (int) e.getX() / squareLength;
             int y = (int) (e.getY() - margin) / squareLength;
-            if (x >= 0 && x < 5 && y >= 0 && y < 5) field.click(x,y);
+            if (x >= 0 && x < 5 && y >= 0 && y < 5) isWin = field.click(x, y);
+            isWin = true;
             invalidate();
             return true;
         }

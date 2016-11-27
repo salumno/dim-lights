@@ -51,17 +51,16 @@ public class OptionsActivity extends AppCompatActivity {
     }
 
 
-    public void putBooleanInPreferences(boolean isChecked, String key){
+    private void putBooleanInPreferences(boolean isChecked, String key){
         SharedPreferences sharedPreferences = this.getPreferences(Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(key, isChecked);
         editor.commit();
     }
 
-    public boolean getBooleanFromPreferences(String key){
+    private boolean getBooleanFromPreferences(String key){
         SharedPreferences sharedPreferences = this.getPreferences(Activity.MODE_PRIVATE);
-        Boolean isChecked = sharedPreferences.getBoolean(key, false);
-        return isChecked;
+        return sharedPreferences.getBoolean(key, false);
     }
 
     public void aboutOnClick(View view) {
