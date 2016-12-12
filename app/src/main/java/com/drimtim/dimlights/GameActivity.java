@@ -19,7 +19,7 @@ import com.drimtim.dimlights.dimlights.R;
 public class GameActivity extends AppCompatActivity implements View.OnTouchListener {
 
     private MenuItem settings;
-    //private int stepCount = 0;
+    private MenuItem restart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +51,12 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
                 .setPositiveButton(R.string.yes,
                         new DialogInterface.OnClickListener(){
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Intent intent = new Intent(GameActivity.this, GameActivity.class);
-                                startActivity(intent);
+                                GameActivity.this.recreate();
                             }
                         })
                 .setNegativeButton(R.string.no,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-//                                GameActivity.this.finish();
                                 GameActivity.super.finish();
                             }
                         });
@@ -69,6 +67,7 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_activity_game, menu);
         settings = menu.findItem(R.id.settings);
+        restart = menu.findItem(R.id.restart);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -78,7 +77,6 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
         ConfirmDialog dialog = new ConfirmDialog();
         dialog.setTitle("Exit");
         dialog.show(fragmentManager, "dialog");
-//        super.onBackPressed();
     }
 
     @Override
@@ -86,11 +84,13 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
         if (item.equals(settings)) {
             Intent intent = new Intent(this, OptionsActivity.class);
             startActivity(intent);
+        } else if (item.equals(restart)) {
+            GameActivity.this.recreate();
         }
         return super.onOptionsItemSelected(item);
     }
 
-    @Override //TODO Подсчет количества ходов пользователя
+    @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         return false;
     }

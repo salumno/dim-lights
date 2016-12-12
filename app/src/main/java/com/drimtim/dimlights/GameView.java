@@ -51,16 +51,10 @@ class GameView extends View {
         inactive.setStrokeWidth(5f);
         inactive.setStyle(Paint.Style.FILL);
         text = new Paint();
-//        text.setAntiAlias(true);
-//        text.setDither(true);
         text.setColor(Color.RED);
-        text.setTextSize(90f);
+        text.setTextSize(60f);
         text.setTextAlign(Paint.Align.CENTER);
-//        text.setStyle(Paint.Style.FILL_AND_STROKE);
 
-//        mBitmap = Bitmap.createBitmap(300, 300, Bitmap.Config.ARGB_8888);
-//        mCanvas = new Canvas(mBitmap);
-//        mBitmapPaint = new Paint(Paint.DITHER_FLAG);
         this.detector = new GestureDetector(context, new MyGestureListener());
     }
 
@@ -69,10 +63,6 @@ class GameView extends View {
     }
     @Override
     protected void onDraw(Canvas canvas) {
-//        canvas.save();
-//        canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
-//        canvas.restore();
-//        canvas.drawColor(Color.WHITE);
         canvas.drawText("Clicks: " + this.clicks, canvas.getWidth() / 2, 100.0f , text);
         this.squareLength = canvas.getWidth() / 5;
         this.margin = (canvas.getHeight() - canvas.getWidth()) / 2;
