@@ -5,9 +5,10 @@
     <string name="options_button">Options</string>
     <string name="exit">Exit</string>
     <string name="yes">Yes</string>
+    <string name="thanks">Thank you!</string>
     <string name="no">No</string>
     <string name="confirm">Are you sure?</string>
-    <string name="win">You win!</string>
+    <string name="win">It is not a joke! You win!\nDo you want to play again?</string>
     <string name="win_message">Play another game?</string>
     <string name="on_game_field_text">Free advertising space</string>
     <string name="title_activity_options">OPTIONS</string>

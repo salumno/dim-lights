@@ -48,7 +48,14 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
         builder.setTitle("")
                 .setMessage(R.string.win)
                 .setCancelable(false)
-                .setNegativeButton(R.string.yes,
+                .setPositiveButton(R.string.yes,
+                        new DialogInterface.OnClickListener(){
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(GameActivity.this, GameActivity.class);
+                                startActivity(intent);
+                            }
+                        })
+                .setNegativeButton(R.string.no,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 //                                GameActivity.this.finish();
