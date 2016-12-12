@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/restart"
+        android:icon="@drawable/ic_refresh_black_36dp"
+        android:title="@string/button_settings"
+        yourapp:showAsAction="always" />
+
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/settings"
+        android:title="@string/button_settings"
+        yourapp:showAsAction="always" />
+
+</menu>

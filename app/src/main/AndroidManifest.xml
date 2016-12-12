@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="com.drimtim.dimlights">
+=======
+    package="com.drimtim.dimlights.dimlights">
+>>>>>>> canvas
 
     <application
         android:allowBackup="true"
@@ -8,14 +12,53 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".MainActivity">
+=======
+
+        <service
+            android:name="com.drimtim.dimlights.SoundService"
+            android:enabled="true" />
+
+        <activity android:name="com.drimtim.dimlights.MainActivity">
+>>>>>>> canvas
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".GameActivity"></activity>
+=======
+        <activity
+            android:name="com.drimtim.dimlights.OptionsActivity"
+            android:label="@string/title_activity_options"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.drimtim.dimlights.GameActivity"
+            android:label="@string/title_activity_game"
+            android:parentActivityName="com.drimtim.dimlights.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.drimtim.dimlights.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="com.drimtim.dimlights.AboutActivity"
+            android:label="@string/about_activity_title"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog">
+        </activity>
+
+        <activity
+            android:name="com.drimtim.dimlights.RulesActivity"
+            android:label="@string/rules_activity_title"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog">
+        </activity>
+
+>>>>>>> canvas
     </application>
 
 </manifest>

@@ -1,6 +1,10 @@
 # Add project specific ProGuard rules here.
 # By default, the flags in this file are appended to flags specified
+<<<<<<< HEAD
 # in D:\Android\SDK/tools/proguard/proguard-android.txt
+=======
+# in /home/salumno/Android/Sdk/tools/proguard/proguard-android.txt
+>>>>>>> canvas
 # You can edit the include path and order by changing the proguardFiles
 # directive in build.gradle.
 #
