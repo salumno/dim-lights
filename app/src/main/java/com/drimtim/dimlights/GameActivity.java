@@ -1,11 +1,5 @@
 package com.drimtim.dimlights;
 
-<<<<<<< HEAD
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-public class GameActivity extends AppCompatActivity {
-=======
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,14 +20,11 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
 
     private MenuItem settings;
     private MenuItem restart;
->>>>>>> canvas
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-<<<<<<< HEAD
-=======
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.back_arrow);
@@ -102,6 +93,5 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         return false;
->>>>>>> canvas
     }
 }

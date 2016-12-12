@@ -1,7 +1,4 @@
 <resources>
-<<<<<<< HEAD
-    <string name="app_name">DimLights</string>
-=======
     <string name="app_name">Dim Lights</string>
     <string name="menu_title">Menu</string>
     <string name="start_game_button">Start Game</string>
@@ -36,5 +33,4 @@
     <string name="about_activity_title">About</string>
     <string name="rules_activity_title">Rules</string>
     <string name="score">Score:</string>
->>>>>>> canvas
 </resources>
